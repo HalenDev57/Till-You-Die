@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://ckam7tdvm2irx"]
+
+[ext_resource type="Script" uid="uid://b5kg3hos4jovu" path="res://Scripts/label.gd" id="1_ktt4e"]
+[ext_resource type="Texture2D" uid="uid://5214wbantgfs" path="res://Placeholder Sprites/LittleGuy.png" id="2_0okwj"]
+
+[node name="Scene" type="Node2D" unique_id=1498757861]
+
+[node name="Countdown" type="Label" parent="." unique_id=534566649]
+offset_left = 551.0
+offset_top = 36.0
+offset_right = 640.0
+offset_bottom = 119.0
+theme_override_font_sizes/font_size = 60
+text = "0"
+script = ExtResource("1_ktt4e")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1399307721]
+position = Vector2(586, 315)
+zoom = Vector2(1.07, 1.07)
+
+[node name="Prolong_button" type="TextureButton" parent="." unique_id=657350589]
+offset_left = 886.0
+offset_top = 217.0
+offset_right = 991.0
+offset_bottom = 316.0
+texture_normal = ExtResource("2_0okwj")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="." unique_id=2023312424]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[connection signal="pressed" from="Prolong_button" to="Countdown" method="_on_texture_button_pressed"]
