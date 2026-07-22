@@ -1,5 +1,7 @@
 extends Label
 
+@onready var clock_ticks = ($"../TickTock")
+
 var time := 60
 var isreal := true
 
@@ -15,6 +17,7 @@ func _process(_delta: float) -> void:
 		await get_tree().create_timer(1.0).timeout
 		time -= 1
 		text = str(time)
+		clock_ticks.play()
 		isreal = true
 
 

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b5kg3hos4jovu" path="res://Scripts/label.gd" id="1_ktt4e"]
 [ext_resource type="Texture2D" uid="uid://5214wbantgfs" path="res://Placeholder Sprites/LittleGuy.png" id="2_0okwj"]
+[ext_resource type="AudioStream" uid="uid://gdudr565wqwh" path="res://Sounds/TickTock.mp3" id="3_hycra"]
 
 [node name="Scene" type="Node2D" unique_id=1498757861]
 
@@ -29,5 +30,8 @@ stretch_mode = 0
 [node name="Label" type="Label" parent="." unique_id=2023312424]
 offset_right = 40.0
 offset_bottom = 23.0
+
+[node name="TickTock" type="AudioStreamPlayer2D" parent="." unique_id=363948634]
+stream = ExtResource("3_hycra")
 
 [connection signal="pressed" from="Prolong_button" to="Countdown" method="_on_texture_button_pressed"]
