@@ -1,21 +1,11 @@
 extends Label
 
 @onready var countdown = $"../Countdown"
-
-var money := 0
-var isreal := true
-var money_gained := 1
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	text = str(money)
+	text = "You need $3"
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if isreal == true and countdown.time > 0:
-		isreal = false
-		await get_tree().create_timer(1.0).timeout
-		money += money_gained
-		text = "$" + str(money)
-		isreal = true
+	text = "You need $" + str(countdown.money_upgrade_cost)
