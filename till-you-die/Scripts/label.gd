@@ -34,7 +34,7 @@ func _on_texture_button_pressed() -> void:
 		cash.money -= time_increase_cost
 		print(cash.money)
 		time_increase_cost += 2
-		text = "$" + str(cash.money)
+		cash.text = "$" + str(cash.money)
 		text = str(time)
 		
 		
