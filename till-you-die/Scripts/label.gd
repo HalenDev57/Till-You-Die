@@ -36,7 +36,7 @@ func _process(_delta: float) -> void:
 
 
 func _on_texture_button_pressed() -> void:
-	if cash.money >= time_increase_cost and time <= 98:
+	if cash.money >= time_increase_cost and time <= 98 and time >0:
 		time += time_increase
 		if needed_buys_till_increase < 2:
 			needed_buys_till_increase += 1
@@ -52,7 +52,7 @@ func _on_texture_button_pressed() -> void:
 
 
 func _on_money_upgrade_button_pressed() -> void:
-	if cash.money >= money_upgrade_cost:
+	if cash.money >= money_upgrade_cost and time > 0:
 		cash.money += money_upgrade
 		cash.money -= money_upgrade_cost
 		#print(cash.money)

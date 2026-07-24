@@ -11,6 +11,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if cash.money < countdown.money_upgrade_cost:
+		position = Vector2(184.0, 466.0)
 		text = "X"
 	else:
 		position = Vector2(163.0, 466.0)

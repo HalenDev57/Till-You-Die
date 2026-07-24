@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://sr3vkhcpxjry" path="res://Sounds/BOMB.mp3" id="8_5m44t"]
 [ext_resource type="Texture2D" uid="uid://twhldmmd7t54" path="res://Sprites/Menu.png" id="9_28fhi"]
 [ext_resource type="Script" uid="uid://crg7ifxwgmdfn" path="res://Scripts/buy_text.gd" id="10_ld164"]
+[ext_resource type="Script" uid="uid://02a4cgfuvwds" path="res://Scripts/buy_text_2.gd" id="11_05mgo"]
 [ext_resource type="Script" uid="uid://b7tidx6emaaxi" path="res://Scripts/dps_counter.gd" id="11_uwar4"]
 
 [node name="Scene" type="Node2D" unique_id=1498757861]
@@ -29,10 +30,10 @@ position = Vector2(586, 315)
 zoom = Vector2(1.07, 1.07)
 
 [node name="Prolong_button" type="TextureButton" parent="." unique_id=657350589]
-offset_left = 847.0
-offset_top = 236.0
-offset_right = 1097.0
-offset_bottom = 364.0
+offset_left = 859.0
+offset_top = 428.0
+offset_right = 1059.0
+offset_bottom = 556.0
 texture_normal = ExtResource("3_28fhi")
 stretch_mode = 0
 
@@ -59,13 +60,13 @@ texture_normal = ExtResource("3_28fhi")
 stretch_mode = 0
 
 [node name="Money_Upgrade_Cost" type="Label" parent="." unique_id=1435866610]
-offset_left = 100.0
-offset_top = 420.0
-offset_right = 412.0
-offset_bottom = 465.0
+offset_left = 90.0
+offset_top = 425.0
+offset_right = 402.0
+offset_bottom = 470.0
 theme_override_fonts/font = ExtResource("7_28fhi")
-theme_override_font_sizes/font_size = 40
-text = "You need $100"
+theme_override_font_sizes/font_size = 30
+text = "You need $100 to buy"
 script = ExtResource("6_ceg6r")
 
 [node name="Time_Increase_Cost" type="Label" parent="." unique_id=458936830]
@@ -88,6 +89,13 @@ position = Vector2(205.00002, 368.99997)
 scale = Vector2(2.4541671, 2.1923077)
 texture = ExtResource("9_28fhi")
 
+[node name="Menu2" type="Sprite2D" parent="." unique_id=719881062]
+visibility_layer = 5
+z_index = -1
+position = Vector2(958, 372.99997)
+scale = Vector2(2.4541671, 2.1923077)
+texture = ExtResource("9_28fhi")
+
 [node name="Buy_Text" type="Label" parent="." unique_id=1441356038]
 offset_left = 184.0
 offset_top = 466.0
@@ -97,6 +105,16 @@ theme_override_fonts/font = ExtResource("7_28fhi")
 theme_override_font_sizes/font_size = 50
 text = "X"
 script = ExtResource("10_ld164")
+
+[node name="Buy_Text2" type="Label" parent="." unique_id=134220527]
+offset_left = 948.0
+offset_top = 470.0
+offset_right = 1024.0
+offset_bottom = 521.0
+theme_override_fonts/font = ExtResource("7_28fhi")
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("11_05mgo")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=2023367475]
 offset_left = 81.0
