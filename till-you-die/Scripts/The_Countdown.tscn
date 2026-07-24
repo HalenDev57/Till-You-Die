@@ -10,17 +10,18 @@
 [ext_resource type="AudioStream" uid="uid://sr3vkhcpxjry" path="res://Sounds/BOMB.mp3" id="8_5m44t"]
 [ext_resource type="Texture2D" uid="uid://twhldmmd7t54" path="res://Sprites/Menu.png" id="9_28fhi"]
 [ext_resource type="Script" uid="uid://crg7ifxwgmdfn" path="res://Scripts/buy_text.gd" id="10_ld164"]
+[ext_resource type="Script" uid="uid://b7tidx6emaaxi" path="res://Scripts/dps_counter.gd" id="11_uwar4"]
 
 [node name="Scene" type="Node2D" unique_id=1498757861]
 
 [node name="Countdown" type="Label" parent="." unique_id=534566649]
-offset_left = 551.0
-offset_top = 36.0
-offset_right = 640.0
-offset_bottom = 119.0
+offset_left = 543.0
+offset_top = 248.0
+offset_right = 643.0
+offset_bottom = 377.0
 theme_override_fonts/font = ExtResource("7_28fhi")
-theme_override_font_sizes/font_size = 60
-text = "0"
+theme_override_font_sizes/font_size = 128
+text = "10"
 script = ExtResource("1_ktt4e")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1399307721]
@@ -36,32 +37,32 @@ texture_normal = ExtResource("3_28fhi")
 stretch_mode = 0
 
 [node name="Money" type="Label" parent="." unique_id=2023312424]
-offset_left = 52.0
-offset_top = 11.0
-offset_right = 340.0
-offset_bottom = 83.0
-theme_override_colors/font_color = Color(0, 1, 0, 1)
+offset_left = 578.0
+offset_top = 9.0
+offset_right = 866.0
+offset_bottom = 81.0
+theme_override_colors/font_color = Color(0.7087332, 0.8924221, 0.5985026, 1)
 theme_override_fonts/font = ExtResource("7_28fhi")
 theme_override_font_sizes/font_size = 52
-text = "$No money"
+text = "$0"
 script = ExtResource("3_ckfhb")
 
 [node name="TickTock" type="AudioStreamPlayer2D" parent="." unique_id=363948634]
 stream = ExtResource("3_hycra")
 
 [node name="Money_Upgrade_Button" type="TextureButton" parent="." unique_id=2138496311]
-offset_left = 100.0
-offset_top = 324.0
-offset_right = 300.0
-offset_bottom = 452.0
+offset_left = 104.0
+offset_top = 424.0
+offset_right = 304.0
+offset_bottom = 552.0
 texture_normal = ExtResource("3_28fhi")
 stretch_mode = 0
 
 [node name="Money_Upgrade_Cost" type="Label" parent="." unique_id=1435866610]
-offset_left = 95.0
-offset_top = 318.0
-offset_right = 407.0
-offset_bottom = 363.0
+offset_left = 100.0
+offset_top = 420.0
+offset_right = 412.0
+offset_bottom = 465.0
 theme_override_fonts/font = ExtResource("7_28fhi")
 theme_override_font_sizes/font_size = 40
 text = "You need $100"
@@ -83,19 +84,43 @@ stream = ExtResource("8_5m44t")
 [node name="Menu" type="Sprite2D" parent="." unique_id=1229011874]
 visibility_layer = 5
 z_index = -1
-position = Vector2(203, 274)
+position = Vector2(205.00002, 368.99997)
 scale = Vector2(2.4541671, 2.1923077)
 texture = ExtResource("9_28fhi")
 
 [node name="Buy_Text" type="Label" parent="." unique_id=1441356038]
 offset_left = 184.0
-offset_top = 363.0
+offset_top = 466.0
 offset_right = 260.0
-offset_bottom = 414.0
+offset_bottom = 517.0
 theme_override_fonts/font = ExtResource("7_28fhi")
 theme_override_font_sizes/font_size = 50
 text = "X"
 script = ExtResource("10_ld164")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=2023367475]
+offset_left = 81.0
+offset_top = 219.0
+offset_right = 331.0
+offset_bottom = 410.0
+theme_override_fonts/normal_font = ExtResource("7_28fhi")
+theme_override_font_sizes/normal_font_size = 28
+bbcode_enabled = true
+text = "INCREASE MONEY GAIN
+
+            Gain +1
+   Dollars Per Second"
+
+[node name="DPS_Counter" type="Label" parent="." unique_id=1544869905]
+offset_left = 86.0
+offset_top = 373.0
+offset_right = 320.0
+offset_bottom = 404.0
+theme_override_colors/font_color = Color(0.6922259, 0.79199874, 0.5320683, 1)
+theme_override_fonts/font = ExtResource("7_28fhi")
+theme_override_font_sizes/font_size = 30
+text = "1 Dollars Per Second"
+script = ExtResource("11_uwar4")
 
 [connection signal="pressed" from="Prolong_button" to="Countdown" method="_on_texture_button_pressed"]
 [connection signal="pressed" from="Money_Upgrade_Button" to="Countdown" method="_on_money_upgrade_button_pressed"]
