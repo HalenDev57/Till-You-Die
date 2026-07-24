@@ -24,7 +24,7 @@ func _process(_delta: float) -> void:
 		isreal = false
 		var bomb_chance := randi_range(1, 26)
 		print(bomb_chance)
-		if bomb_chance == 13:
+		if bomb_chance == 21:
 			time -= 15
 			cash.money -= money_upgrade_cost_increase
 			bomb.play()

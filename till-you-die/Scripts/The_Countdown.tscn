@@ -1,14 +1,15 @@
 [gd_scene format=3 uid="uid://ckam7tdvm2irx"]
 
 [ext_resource type="Script" uid="uid://b5kg3hos4jovu" path="res://Scripts/label.gd" id="1_ktt4e"]
-[ext_resource type="Texture2D" uid="uid://cjpvleawy32q6" path="res://Sprites/Button.png" id="2_5m44t"]
+[ext_resource type="Texture2D" uid="uid://ckty0jp2u4068" path="res://Sprites/Thin_BLW_Button.png" id="3_28fhi"]
 [ext_resource type="Script" uid="uid://bo18s62u1jv8r" path="res://Scripts/money.gd" id="3_ckfhb"]
 [ext_resource type="AudioStream" uid="uid://gdudr565wqwh" path="res://Sounds/TickTock.mp3" id="3_hycra"]
-[ext_resource type="Texture2D" uid="uid://c3jnins0x43bc" path="res://Placeholder Sprites/Ball.png" id="5_yj0a4"]
 [ext_resource type="Script" uid="uid://dmqc136sv77gy" path="res://Scripts/money_upgrade_cost.gd" id="6_ceg6r"]
 [ext_resource type="Script" uid="uid://jxgt067pkix" path="res://Scripts/time_increase_cost.gd" id="7_5m44t"]
 [ext_resource type="FontFile" uid="uid://dvup6lhof08hy" path="res://Fonts/Jersey25-Regular.ttf" id="7_28fhi"]
 [ext_resource type="AudioStream" uid="uid://sr3vkhcpxjry" path="res://Sounds/BOMB.mp3" id="8_5m44t"]
+[ext_resource type="Texture2D" uid="uid://twhldmmd7t54" path="res://Sprites/Menu.png" id="9_28fhi"]
+[ext_resource type="Script" uid="uid://crg7ifxwgmdfn" path="res://Scripts/buy_text.gd" id="10_ld164"]
 
 [node name="Scene" type="Node2D" unique_id=1498757861]
 
@@ -17,6 +18,7 @@ offset_left = 551.0
 offset_top = 36.0
 offset_right = 640.0
 offset_bottom = 119.0
+theme_override_fonts/font = ExtResource("7_28fhi")
 theme_override_font_sizes/font_size = 60
 text = "0"
 script = ExtResource("1_ktt4e")
@@ -26,19 +28,20 @@ position = Vector2(586, 315)
 zoom = Vector2(1.07, 1.07)
 
 [node name="Prolong_button" type="TextureButton" parent="." unique_id=657350589]
-offset_left = 835.0
-offset_top = 239.0
-offset_right = 1065.0
-offset_bottom = 367.0
-texture_normal = ExtResource("2_5m44t")
+offset_left = 847.0
+offset_top = 236.0
+offset_right = 1097.0
+offset_bottom = 364.0
+texture_normal = ExtResource("3_28fhi")
 stretch_mode = 0
 
 [node name="Money" type="Label" parent="." unique_id=2023312424]
-offset_left = 49.0
-offset_top = -1.0
-offset_right = 337.0
-offset_bottom = 71.0
+offset_left = 52.0
+offset_top = 11.0
+offset_right = 340.0
+offset_bottom = 83.0
 theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("7_28fhi")
 theme_override_font_sizes/font_size = 52
 text = "$No money"
 script = ExtResource("3_ckfhb")
@@ -47,28 +50,28 @@ script = ExtResource("3_ckfhb")
 stream = ExtResource("3_hycra")
 
 [node name="Money_Upgrade_Button" type="TextureButton" parent="." unique_id=2138496311]
-offset_left = 90.0
-offset_top = 152.0
-offset_right = 252.0
-offset_bottom = 327.0
-texture_normal = ExtResource("5_yj0a4")
+offset_left = 100.0
+offset_top = 324.0
+offset_right = 300.0
+offset_bottom = 452.0
+texture_normal = ExtResource("3_28fhi")
 stretch_mode = 0
 
 [node name="Money_Upgrade_Cost" type="Label" parent="." unique_id=1435866610]
-offset_left = 55.0
-offset_top = 278.0
-offset_right = 367.0
-offset_bottom = 323.0
+offset_left = 95.0
+offset_top = 318.0
+offset_right = 407.0
+offset_bottom = 363.0
 theme_override_fonts/font = ExtResource("7_28fhi")
-theme_override_font_sizes/font_size = 32
-text = "I just shatted myself"
+theme_override_font_sizes/font_size = 40
+text = "You need $100"
 script = ExtResource("6_ceg6r")
 
 [node name="Time_Increase_Cost" type="Label" parent="." unique_id=458936830]
-offset_left = 851.0
-offset_top = 281.0
-offset_right = 1115.0
-offset_bottom = 326.0
+offset_left = 860.0
+offset_top = 282.0
+offset_right = 1089.0
+offset_bottom = 327.0
 theme_override_fonts/font = ExtResource("7_28fhi")
 theme_override_font_sizes/font_size = 40
 text = "You need $100"
@@ -76,6 +79,23 @@ script = ExtResource("7_5m44t")
 
 [node name="BOMB" type="AudioStreamPlayer2D" parent="." unique_id=332981842]
 stream = ExtResource("8_5m44t")
+
+[node name="Menu" type="Sprite2D" parent="." unique_id=1229011874]
+visibility_layer = 5
+z_index = -1
+position = Vector2(203, 274)
+scale = Vector2(2.4541671, 2.1923077)
+texture = ExtResource("9_28fhi")
+
+[node name="Buy_Text" type="Label" parent="." unique_id=1441356038]
+offset_left = 184.0
+offset_top = 363.0
+offset_right = 260.0
+offset_bottom = 414.0
+theme_override_fonts/font = ExtResource("7_28fhi")
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("10_ld164")
 
 [connection signal="pressed" from="Prolong_button" to="Countdown" method="_on_texture_button_pressed"]
 [connection signal="pressed" from="Money_Upgrade_Button" to="Countdown" method="_on_money_upgrade_button_pressed"]
