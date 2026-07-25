@@ -3,6 +3,7 @@ extends Label
 @onready var clock_ticks = ($"../TickTock")
 @onready var bomb = ($"../BOMB")
 @onready var cash = $"../Money"
+@onready var camera = $"../Camera2D"
 
 var time := 60
 var isreal := true
@@ -27,6 +28,7 @@ func _process(_delta: float) -> void:
 		if bomb_chance == 21:
 			time -= 15
 			cash.money -= money_upgrade_cost_increase
+			camera.trigger_shake()
 			bomb.play()
 		await get_tree().create_timer(1.0).timeout
 		time -= 1
@@ -38,7 +40,7 @@ func _process(_delta: float) -> void:
 func _on_texture_button_pressed() -> void:
 	if cash.money >= time_increase_cost and time <= 98 and time >0:
 		time += time_increase
-		if needed_buys_till_increase < 2:
+		if needed_buys_till_increase < 1:
 			needed_buys_till_increase += 1
 		else:
 			needed_buys_till_increase = 0
