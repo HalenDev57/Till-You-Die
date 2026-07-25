@@ -8,4 +8,4 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	text = "Increase the time by " + str(countdown.time_increase) + " seconds to live more"
+	text = "Increase the time by " + str(countdown.time_increase) + " more seconds"

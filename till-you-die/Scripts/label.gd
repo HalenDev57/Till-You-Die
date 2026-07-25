@@ -1,6 +1,7 @@
 extends Label
 
 @onready var clock_ticks = ($"../TickTock")
+@onready var buy = ($"../Kaching")
 @onready var bomb = ($"../BOMB")
 @onready var cash = $"../Money"
 @onready var camera = $"../Camera2D"
@@ -23,7 +24,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if isreal == true and time >= 1:
 		isreal = false
-		var bomb_chance := randi_range(1, 26)
+		var bomb_chance := randi_range(1, 28)
 		print(bomb_chance)
 		if bomb_chance == 21:
 			time -= 15
@@ -40,6 +41,7 @@ func _process(_delta: float) -> void:
 func _on_texture_button_pressed() -> void:
 	if cash.money >= time_increase_cost and time <= 98 and time >0:
 		time += time_increase
+		buy.play()
 		if needed_buys_till_increase < 1:
 			needed_buys_till_increase += 1
 		else:
@@ -55,6 +57,7 @@ func _on_texture_button_pressed() -> void:
 
 func _on_money_upgrade_button_pressed() -> void:
 	if cash.money >= money_upgrade_cost and time > 0:
+		buy.play()
 		cash.money += money_upgrade
 		cash.money -= money_upgrade_cost
 		#print(cash.money)
