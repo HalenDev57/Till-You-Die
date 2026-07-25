@@ -18,6 +18,8 @@
 [ext_resource type="AudioStream" uid="uid://c52tulmhdq16w" path="res://Sounds/Cash.mp3" id="16_urlti"]
 [ext_resource type="Texture2D" uid="uid://cckqkmeoht0df" path="res://Sprites/MoneyCounta.png" id="17_mwnqg"]
 [ext_resource type="Script" uid="uid://c6yq742humb8n" path="res://Scripts/total_time.gd" id="18_unwfx"]
+[ext_resource type="AudioStream" uid="uid://ca3tv23cfo0l4" path="res://Sounds/dragon-studio-the-black-door-570464.mp3" id="19_w1llt"]
+[ext_resource type="AudioStream" uid="uid://d34e6sc35oui6" path="res://Sounds/CreepyX.mp3" id="20_mwy8c"]
 
 [node name="Scene" type="Node2D" unique_id=1498757861]
 
@@ -57,6 +59,7 @@ script = ExtResource("3_ckfhb")
 
 [node name="TickTock" type="AudioStreamPlayer2D" parent="." unique_id=363948634]
 stream = ExtResource("3_hycra")
+volume_db = -4.86
 
 [node name="Money_Upgrade_Button" type="TextureButton" parent="." unique_id=2138496311]
 offset_left = 104.0
@@ -175,7 +178,7 @@ texture = ExtResource("15_ohsld")
 
 [node name="Kaching" type="AudioStreamPlayer2D" parent="." unique_id=420071627]
 stream = ExtResource("16_urlti")
-volume_db = 3.888
+volume_db = 1.458
 
 [node name="MoneyCounta" type="Sprite2D" parent="." unique_id=785414638]
 z_index = -1
@@ -184,14 +187,23 @@ scale = Vector2(1.1484375, 1.0546875)
 texture = ExtResource("17_mwnqg")
 
 [node name="total_time" type="Label" parent="." unique_id=429090473]
-offset_left = 504.0
-offset_top = 184.0
-offset_right = 677.0
-offset_bottom = 216.0
+offset_left = 525.0
+offset_top = 182.0
+offset_right = 698.0
+offset_bottom = 214.0
 theme_override_fonts/font = ExtResource("7_28fhi")
 theme_override_font_sizes/font_size = 31
 text = "Total Time: 1"
 script = ExtResource("18_unwfx")
+
+[node name="Music" type="AudioStreamPlayer2D" parent="." unique_id=739827245]
+position = Vector2(586, 315)
+stream = ExtResource("19_w1llt")
+volume_db = -7.862
+autoplay = true
+
+[node name="X" type="AudioStreamPlayer2D" parent="." unique_id=397924945]
+stream = ExtResource("20_mwy8c")
 
 [connection signal="pressed" from="Prolong_button" to="Countdown" method="_on_texture_button_pressed"]
 [connection signal="pressed" from="Money_Upgrade_Button" to="Countdown" method="_on_money_upgrade_button_pressed"]

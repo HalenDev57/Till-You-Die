@@ -12,9 +12,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if isreal == true and countdown.time >= 1:
 		isreal = false
-		print("lalala")
 		await get_tree().create_timer(1.0).timeout
-		print(total_time)
 		total_time += 1
 		text = "Total Time: " + str(total_time)
 		isreal = true

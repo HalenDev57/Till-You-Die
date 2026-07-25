@@ -2,6 +2,7 @@ extends Label
 
 @onready var clock_ticks = ($"../TickTock")
 @onready var buy = ($"../Kaching")
+@onready var x = ($"../X")
 @onready var bomb = ($"../BOMB")
 @onready var cash = $"../Money"
 @onready var camera = $"../Camera2D"
@@ -25,7 +26,6 @@ func _process(_delta: float) -> void:
 	if isreal == true and time >= 1:
 		isreal = false
 		var bomb_chance := randi_range(1, 28)
-		print(bomb_chance)
 		if bomb_chance == 21 and time > 25:
 			time -= 15
 			cash.money -= money_upgrade_cost_increase
@@ -37,6 +37,8 @@ func _process(_delta: float) -> void:
 		time -= 1
 		text = str(time)
 		clock_ticks.play()
+		if time == 0:
+			get_tree().change_scene_to_file("res://Scenes/The_Menu.tscn")
 		isreal = true
 
 
@@ -55,6 +57,8 @@ func _on_texture_button_pressed() -> void:
 		time_increase_cost += 2
 		cash.text = "$" + str(cash.money)
 		text = str(time)
+	else:
+		x.play()
 
 
 func _on_money_upgrade_button_pressed() -> void:
@@ -67,3 +71,5 @@ func _on_money_upgrade_button_pressed() -> void:
 		money_upgrade_cost += (2 + money_upgrade_cost_increase)
 		cash.money_gained += 1
 		cash.text = "$" + str(cash.money)
+	else:
+		x.play()

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b82gshqfbwj6u"]
+
+[ext_resource type="FontFile" uid="uid://dvup6lhof08hy" path="res://Fonts/Jersey25-Regular.ttf" id="1_1jx6c"]
+[ext_resource type="AudioStream" uid="uid://davhlqtooxtpm" path="res://Sounds/MysteriousWind.mp3" id="2_kf33f"]
+
+[node name="Main_Menu" type="Node2D" unique_id=915294527]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1726428842]
+offset_left = 134.0
+offset_top = 189.0
+offset_right = 1035.0
+offset_bottom = 545.0
+theme_override_fonts/normal_font = ExtResource("1_1jx6c")
+theme_override_font_sizes/normal_font_size = 63
+text = "                      YOU DIED!
+          Your life ended too soon
+
+Yet how much were you really living
+ trying to increase your limited time"
+
+[node name="Mysterious Wind" type="AudioStreamPlayer2D" parent="." unique_id=1510145888]
+stream = ExtResource("2_kf33f")
+autoplay = true
