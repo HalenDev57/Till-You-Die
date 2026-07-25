@@ -26,9 +26,11 @@ func _process(_delta: float) -> void:
 		isreal = false
 		var bomb_chance := randi_range(1, 28)
 		print(bomb_chance)
-		if bomb_chance == 21:
+		if bomb_chance == 21 and time > 25:
 			time -= 15
 			cash.money -= money_upgrade_cost_increase
+			text = str(time)
+			cash.text = "$" + str(cash.money)
 			camera.trigger_shake()
 			bomb.play()
 		await get_tree().create_timer(1.0).timeout

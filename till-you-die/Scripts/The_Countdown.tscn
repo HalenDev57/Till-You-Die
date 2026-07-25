@@ -16,14 +16,16 @@
 [ext_resource type="Script" uid="uid://couvxmxhhu5pl" path="res://Scripts/rich_text_label_3.gd" id="13_oawtb"]
 [ext_resource type="Texture2D" uid="uid://cbmhxar2ya6pn" path="res://Sprites/DeathCounter.png" id="15_ohsld"]
 [ext_resource type="AudioStream" uid="uid://c52tulmhdq16w" path="res://Sounds/Cash.mp3" id="16_urlti"]
+[ext_resource type="Texture2D" uid="uid://cckqkmeoht0df" path="res://Sprites/MoneyCounta.png" id="17_mwnqg"]
+[ext_resource type="Script" uid="uid://c6yq742humb8n" path="res://Scripts/total_time.gd" id="18_unwfx"]
 
 [node name="Scene" type="Node2D" unique_id=1498757861]
 
 [node name="Countdown" type="Label" parent="." unique_id=534566649]
-offset_left = 566.0
-offset_top = 78.0
-offset_right = 666.0
-offset_bottom = 207.0
+offset_left = 555.0
+offset_top = 87.0
+offset_right = 655.0
+offset_bottom = 216.0
 theme_override_fonts/font = ExtResource("7_28fhi")
 theme_override_font_sizes/font_size = 96
 text = "10"
@@ -43,10 +45,10 @@ texture_normal = ExtResource("3_28fhi")
 stretch_mode = 0
 
 [node name="Money" type="Label" parent="." unique_id=2023312424]
-offset_left = 546.0
-offset_top = 452.0
-offset_right = 834.0
-offset_bottom = 524.0
+offset_left = 569.0
+offset_top = 538.0
+offset_right = 857.0
+offset_bottom = 610.0
 theme_override_colors/font_color = Color(0.7087332, 0.8924221, 0.5985026, 1)
 theme_override_fonts/font = ExtResource("7_28fhi")
 theme_override_font_sizes/font_size = 52
@@ -167,13 +169,29 @@ script = ExtResource("13_oawtb")
 
 [node name="DeathCounter" type="Sprite2D" parent="." unique_id=1699429854]
 z_index = -1
-position = Vector2(604.00006, 101)
+position = Vector2(587.00006, 107.00001)
 scale = Vector2(1.9036697, 1.6711956)
 texture = ExtResource("15_ohsld")
 
 [node name="Kaching" type="AudioStreamPlayer2D" parent="." unique_id=420071627]
 stream = ExtResource("16_urlti")
 volume_db = 3.888
+
+[node name="MoneyCounta" type="Sprite2D" parent="." unique_id=785414638]
+z_index = -1
+position = Vector2(595, 530)
+scale = Vector2(1.1484375, 1.0546875)
+texture = ExtResource("17_mwnqg")
+
+[node name="total_time" type="Label" parent="." unique_id=429090473]
+offset_left = 504.0
+offset_top = 184.0
+offset_right = 677.0
+offset_bottom = 216.0
+theme_override_fonts/font = ExtResource("7_28fhi")
+theme_override_font_sizes/font_size = 31
+text = "Total Time: 1"
+script = ExtResource("18_unwfx")
 
 [connection signal="pressed" from="Prolong_button" to="Countdown" method="_on_texture_button_pressed"]
 [connection signal="pressed" from="Money_Upgrade_Button" to="Countdown" method="_on_money_upgrade_button_pressed"]
